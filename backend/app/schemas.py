@@ -19,6 +19,10 @@ class ActionResult(BaseModel):
     ok: bool
     message: str
     entry: dict[str, Any] | None = None
+    # 越权时列出提交行缺少的权限点，前端直接挂在对应行上提示。
+    missing_permissions: list[str] = Field(default_factory=list)
+    # forbidden / duplicate / conflict / state / not_found，便于前端区别展示。
+    code: str | None = None
 
 
 class EntryPayload(BaseModel):

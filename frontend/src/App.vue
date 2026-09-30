@@ -11,7 +11,7 @@
     <main class="app-main">
       <header class="app-head">
         <span class="head-desc">面向机场地面保障的航空器引导、客梯对接、行李装卸、航油加注、除冰作业与廊桥调度的一体化管理后台。</span>
-        <span class="head-user">当前值班：{{ store.operator }} · {{ store.shiftLabel }}</span>
+        <span class="head-user">当前值班：{{ store.operator }}（{{ store.role }}岗<template v-if="store.team"> · {{ store.team }}</template>） · {{ store.shiftLabel }}</span>
       </header>
       <RouterView />
     </main>
